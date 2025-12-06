@@ -1,7 +1,7 @@
 /* eslint-disable sort-keys */
 import pathLib from 'node:path'
 import { Card, Set, SupportedLanguages, Types, Stamps, variant_detailed, StampDetail } from '../../../interfaces'
-import { CardResume, Card as CardSingle } from '../../../meta/definitions/api'
+import { Card as CardSingle, CardResume, Related } from '../../../meta/definitions/api'
 import { getSet, setToSetSimple } from './setUtil'
 import translate from './translationUtil'
 import { cardIsLegal, DB_PATH, fetchRemoteFile, getDataFolder, getLastEdit, resolveText, smartGlob } from './util'
