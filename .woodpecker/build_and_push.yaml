@@ -1,0 +1,7 @@
+steps:
+  - name: build-tcgdex-stg
+    image: moby/buildkit:latest
+    commands:
+      - "buildctl --addr tcp://buildkit.buildkit.svc.cluster.local:1234 build --frontend dockerfile.v0 -local context=./ -local dockerfile=./  --output type=image,name=zot.zot:5000/pokepricing/tcgdex:latest,push=true,registry.insecure=true --output type=image,name=zot.zot:5000/pokepricing/tcgdex:${CI_COMMIT_SHA},push=true,registry.insecure=true"
+    when:
+      - event: push
